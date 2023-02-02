@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @mortega2-ops
-- 👀 I’m interested in web3
-- 🌱 I’m currently learning solidity
-- 💞️ I’m looking to collaborate on nft project
+- 👀 I’m interested in automated testing, scripting, API development
+- 🌱 I’m currently learning clean test development
+- 💞️ I’m looking to collaborate on nothing atm
 - 📫 How to reach me <mortega2@catalyte.io>
 
 <!---
