@@ -8,12 +8,6 @@
 
 ---
 
-### 🕹️ My contribution graph, played as arcade games
-
-> Two games run on my real contribution grid, and they **reroll every night** —
-> Pac-Man, Breakout, Galaga, Puzzle Bobble, Bomberman, Minesweeper. Come back
-> tomorrow and it's a different pair.
-
 <div align="center">
   <picture>
     <source
@@ -25,23 +19,8 @@
       srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-top.svg"
     />
     <img
-      alt="Arcade game played on my GitHub contribution grid"
+      alt="An arcade game played on my GitHub contribution grid"
       src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-top.svg"
-    />
-  </picture>
-
-  <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-bottom-dark.svg"
-    />
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-bottom.svg"
-    />
-    <img
-      alt="A second arcade game played on my GitHub contribution grid"
-      src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-bottom.svg"
     />
   </picture>
 </div>
@@ -133,6 +112,25 @@ then checking its work. Four habits do most of the lifting:
   <img height="200" alt="When I actually commit" src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github/4-productive-time.svg" />
 </picture>
 
+</div>
+
+---
+
+<div align="center">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-bottom-dark.svg"
+    />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-bottom.svg"
+    />
+    <img
+      alt="A second arcade game played on my GitHub contribution grid"
+      src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/dist/arcade-bottom.svg"
+    />
+  </picture>
 </div>
 
 <!--
