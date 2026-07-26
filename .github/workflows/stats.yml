@@ -33,6 +33,11 @@ jobs:
           AUTO_PUSH: false
           THEME: github
 
+      # The action clears profile-summary-card-output/ before each run, so the
+      # light theme has to be stashed before the dark run overwrites it.
+      - name: Stash the light cards
+        run: cp -R profile-summary-card-output "$RUNNER_TEMP/light"
+
       - name: Generate dark cards
         uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
@@ -43,8 +48,16 @@ jobs:
           AUTO_PUSH: false
           THEME: github_dark
 
+      - name: Restore the light cards alongside the dark ones
+        run: cp -R "$RUNNER_TEMP/light/." profile-summary-card-output/
+
       - name: Show what was generated
-        run: ls -R profile-summary-card-output >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          {
+            echo '```'
+            ls -R profile-summary-card-output
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit the cards
         uses: stefanzweifel/git-auto-commit-action@v7
