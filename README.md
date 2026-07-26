@@ -79,7 +79,35 @@
 
 </div>
 
+---
+
+### 📊 The numbers
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github_dark/1-repos-per-language.svg" />
+  <img height="200" alt="Repos per language" src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github/1-repos-per-language.svg" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github_dark/2-most-commit-language.svg" />
+  <img height="200" alt="Most committed languages" src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github/2-most-commit-language.svg" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github_dark/4-productive-time.svg" />
+  <img height="200" alt="When I actually commit" src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github/4-productive-time.svg" />
+</picture>
+
+</div>
+
 <!--
+  These cards are generated INTO this repo by .github/workflows/stats.yml, so
+  there's no third-party service to 503 on me (the previous ones did exactly
+  that). Two more cards — 0-profile-details and 3-stats — need a personal
+  access token in secrets as SUMMARY_GITHUB_TOKEN; the built-in Actions token
+  can't read user-level GraphQL.
+
   The two arcade animations are regenerated every night by
   .github/workflows/arcade.yml (abozanona/pacman-contribution-graph).
 
