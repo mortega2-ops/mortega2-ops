@@ -81,6 +81,31 @@
 
 ---
 
+### 🤖 Today's hardest engineering decision
+
+<div align="center">
+
+![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white)
+&nbsp;&nbsp;**or**&nbsp;&nbsp;
+![Codex](https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0zLjYgNS40IDIuMiA2LjggNy40IDEybC01LjIgNS4yIDEuNCAxLjRMMTAuMiAxMnpNMTIgMTcuNGgxMHYySDEyeiIvPjwvc3ZnPgo=&logoColor=white)
+
+</div>
+
+> Some days I ask Claude. Some days I ask Codex. Some days I ask both and let
+> them argue about it — on my résumé that one's called **AI orchestration**.
+
+I spend less time writing code than building the thing that writes the code,
+then checking its work. Four habits do most of the lifting:
+
+| | | |
+|---|---|---|
+| 🕸️ | **Graph engineering** | Work modeled as a dependency graph instead of a to-do list. Parallel lanes become obvious, and nothing starts before its inputs exist. |
+| 🎼 | **AI orchestration** | Several agents in defined lanes with one reviewer, rather than one agent doing everything badly. |
+| 🔁 | **Self-learning loops** | Every correction gets written down, so I fix a thing once instead of re-explaining it every session. |
+| ⚡ | **Efficiency with AI** | Measured in things shipped, not prompts sent. A green test suite is not the same as a good product. |
+
+---
+
 ### 📊 The numbers
 
 <div align="center">
