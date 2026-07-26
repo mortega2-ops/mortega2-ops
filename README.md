@@ -79,24 +79,6 @@
 
 </div>
 
----
-
-### 📊 The numbers
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=mortega2-ops&show_icons=true&hide_border=true&theme=github_dark&card_width=450" />
-  <img height="165" alt="Mark's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=mortega2-ops&show_icons=true&hide_border=true&theme=default&card_width=450" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=mortega2-ops&layout=compact&hide_border=true&theme=github_dark&card_width=320" />
-  <img height="165" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mortega2-ops&layout=compact&hide_border=true&theme=default&card_width=320" />
-</picture>
-
-</div>
-
 <!--
   The two arcade animations are regenerated every night by
   .github/workflows/arcade.yml (abozanona/pacman-contribution-graph).
