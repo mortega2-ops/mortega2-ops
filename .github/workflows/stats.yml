@@ -1,0 +1,53 @@
+name: Profile summary cards
+
+# Generates the stats cards INTO THIS REPO rather than hotlinking a public
+# service. github-readme-stats.vercel.app was returning 503 and showing broken
+# images on the profile; self-hosted cards can't go down on someone else's
+# infrastructure.
+#
+# Output: profile-summary-card-output/<theme>/<card>.svg
+
+on:
+  schedule:
+    # 07:00 UTC — an hour after the arcade job, so the two never race to push
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Generate light cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          UTC_OFFSET: -6 # Denver
+          AUTO_PUSH: false
+          THEME: github
+
+      - name: Generate dark cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          UTC_OFFSET: -6
+          AUTO_PUSH: false
+          THEME: github_dark
+
+      - name: Show what was generated
+        run: ls -R profile-summary-card-output >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the cards
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: refresh profile summary cards"
+          file_pattern: profile-summary-card-output/
