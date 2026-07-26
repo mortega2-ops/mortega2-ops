@@ -29,11 +29,9 @@
 
 ### 👋 About me
 
-- 🧪 SDET — end-to-end and API test automation. I like tests that actually catch things.
-- 📄 Day job: making PDF and Excel parsing boring and reliable ([`doc-pipeline-kit`](https://github.com/mortega2-ops/doc-pipeline-kit))
 - 🏈 Side quests: [fantasy football draft tooling](https://github.com/mortega2-ops/Fantasy_Draft_Board), [trading agents](https://github.com/mortega2-ops/Vibe-Trading), and small games in Godot
-- 🌱 Currently learning: clean test design and how far I can push agentic tooling
-- 📫 Reach me: [mortega2@catalyte.io](mailto:mortega2@catalyte.io)
+- 🌱 Currently learning: how far I can push agentic tooling
+- 📫 Reach me: mark-ortega.com)
 
 ---
 
