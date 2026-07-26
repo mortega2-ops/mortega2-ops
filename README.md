@@ -111,6 +111,15 @@ then checking its work. Four habits do most of the lifting:
 <div align="center">
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github_dark/0-profile-details.svg" />
+  <img alt="Profile details" src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github/0-profile-details.svg" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github_dark/3-stats.svg" />
+  <img height="200" alt="Stats" src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github/3-stats.svg" />
+</picture>
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github_dark/1-repos-per-language.svg" />
   <img height="200" alt="Repos per language" src="https://raw.githubusercontent.com/mortega2-ops/mortega2-ops/main/profile-summary-card-output/github/1-repos-per-language.svg" />
 </picture>
@@ -129,9 +138,8 @@ then checking its work. Four habits do most of the lifting:
 <!--
   These cards are generated INTO this repo by .github/workflows/stats.yml, so
   there's no third-party service to 503 on me (the previous ones did exactly
-  that). Two more cards — 0-profile-details and 3-stats — need a personal
-  access token in secrets as SUMMARY_GITHUB_TOKEN; the built-in Actions token
-  can't read user-level GraphQL.
+  that). They need SUMMARY_GITHUB_TOKEN in repo secrets — the built-in Actions
+  token can't read the user-level GraphQL the profile and stats cards use.
 
   The two arcade animations are regenerated every night by
   .github/workflows/arcade.yml (abozanona/pacman-contribution-graph).
