@@ -1,0 +1,95 @@
+name: Arcade contribution graph
+
+# Two stacked animations on my profile, both rerolled every night from a pool of
+# six games. Neither repeats what played yesterday, and the two slots never show
+# the same game at once. Output paths are stable, so README.md never changes:
+#
+#   dist/arcade-top.svg      dist/arcade-top-dark.svg
+#   dist/arcade-bottom.svg   dist/arcade-bottom-dark.svg
+#
+# To pin the pair forever: shrink GAMES to exactly the two you want.
+
+on:
+  schedule:
+    # 06:00 UTC daily — roughly 1-2am Eastern, so it's fresh by morning
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      games:
+        description: 'Force a pair, e.g. "pacman,galaga" (blank = random)'
+        required: false
+        default: ""
+  # Deliberately no `push` trigger: a push would instantly reroll the pair I
+  # just committed. Nightly cron + manual dispatch only.
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Pick tonight's two games
+        id: pick
+        run: |
+          set -euo pipefail
+          GAMES=(pacman breakout galaga puzzle-bobble bomberman minesweeper)
+          FORCED="${{ inputs.games }}"
+          YESTERDAY="$(cat dist/current-games.txt 2>/dev/null || true)"
+
+          if [ -n "$FORCED" ]; then
+            TOP="${FORCED%%,*}"
+            BOTTOM="${FORCED##*,}"
+          else
+            # Drop both of yesterday's games from the pool, shuffle, take two.
+            # 6 games - 2 played = 4 left, so a distinct pair is always available.
+            POOL=()
+            for g in "${GAMES[@]}"; do
+              case ",$YESTERDAY," in
+                *",$g,"*) ;;
+                *) POOL+=("$g") ;;
+              esac
+            done
+            # Draw two without replacement (pure bash, no shuf dependency)
+            i=$((RANDOM % ${#POOL[@]}))
+            TOP="${POOL[$i]}"
+            unset "POOL[$i]"
+            POOL=("${POOL[@]}")
+
+            j=$((RANDOM % ${#POOL[@]}))
+            BOTTOM="${POOL[$j]}"
+          fi
+
+          echo "top=$TOP"       >> "$GITHUB_OUTPUT"
+          echo "bottom=$BOTTOM" >> "$GITHUB_OUTPUT"
+          echo "🎮 tonight: **$TOP** over **$BOTTOM** (yesterday: ${YESTERDAY:-none})" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Generate both animations
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          games: ${{ steps.pick.outputs.top }},${{ steps.pick.outputs.bottom }}
+          player_style: opportunistic
+
+      - name: Move to stable filenames
+        run: |
+          set -euo pipefail
+          TOP="${{ steps.pick.outputs.top }}"
+          BOTTOM="${{ steps.pick.outputs.bottom }}"
+
+          mv "dist/${TOP}-contribution-graph.svg"         dist/arcade-top.svg
+          mv "dist/${TOP}-contribution-graph-dark.svg"    dist/arcade-top-dark.svg
+          mv "dist/${BOTTOM}-contribution-graph.svg"      dist/arcade-bottom.svg
+          mv "dist/${BOTTOM}-contribution-graph-dark.svg" dist/arcade-bottom-dark.svg
+
+          echo "$TOP,$BOTTOM" > dist/current-games.txt
+          rm -f dist/*-contribution-graph*.svg
+
+      - name: Commit tonight's games
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: arcade graph -> ${{ steps.pick.outputs.top }} + ${{ steps.pick.outputs.bottom }}"
+          file_pattern: dist/
