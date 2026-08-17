@@ -9,8 +9,8 @@ name: Profile summary cards
 
 on:
   schedule:
-    # 07:00 UTC — an hour after the arcade job, so the two never race to push
-    - cron: "0 7 * * *"
+    # 07:00 UTC Sundays — an hour after arcade, so the two never race to push
+    - cron: "0 7 * * 0"
   workflow_dispatch:
 
 permissions:
