@@ -1,1 +1,1 @@
-minesweeper,pacman
+puzzle-bobble,breakout
