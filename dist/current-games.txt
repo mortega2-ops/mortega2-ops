@@ -1,1 +1,1 @@
-minesweeper,bomberman
+puzzle-bobble,pacman
