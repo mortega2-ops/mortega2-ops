@@ -1,1 +1,1 @@
-puzzle-bobble,pacman
+breakout,galaga
