@@ -1,1 +1,1 @@
-minesweeper,breakout
+puzzle-bobble,bomberman
