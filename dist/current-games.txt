@@ -1,1 +1,1 @@
-bomberman,galaga
+minesweeper,pacman
