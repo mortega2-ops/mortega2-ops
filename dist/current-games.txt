@@ -1,1 +1,1 @@
-galaga,minesweeper
+puzzle-bobble,breakout
