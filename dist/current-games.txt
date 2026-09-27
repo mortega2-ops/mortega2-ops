@@ -1,1 +1,1 @@
-minesweeper,galaga
+puzzle-bobble,pacman
