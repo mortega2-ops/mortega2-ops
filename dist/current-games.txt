@@ -1,1 +1,1 @@
-galaga,puzzle-bobble
+breakout,bomberman
