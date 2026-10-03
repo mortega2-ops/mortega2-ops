@@ -1,1 +1,1 @@
-breakout,bomberman
+pacman,galaga
