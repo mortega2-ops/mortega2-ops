@@ -1,1 +1,1 @@
-bomberman,minesweeper
+breakout,galaga
