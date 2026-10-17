@@ -1,1 +1,1 @@
-pacman,minesweeper
+breakout,bomberman
