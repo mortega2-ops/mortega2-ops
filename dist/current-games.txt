@@ -1,1 +1,1 @@
-pacman,puzzle-bobble
+bomberman,galaga
