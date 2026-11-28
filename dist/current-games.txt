@@ -1,1 +1,1 @@
-bomberman,puzzle-bobble
+galaga,minesweeper
